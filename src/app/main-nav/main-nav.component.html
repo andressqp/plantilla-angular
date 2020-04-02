@@ -1,0 +1,48 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>
+      <span class="logo-lg"><b><img src="https://www.usco.edu.co/imagen-institucional/blanco/universidad-surcolombiana-p.png"></b></span>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a class="list" mat-list-item href="#">Link 1</a>
+      <a class="list" mat-list-item href="#">Link 2</a>
+      <a class="list" mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="toolbar">
+      <button
+        type="button" 
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>planes-posgrado</span>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user"></i><img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" class="rounded-circle z-depth-0"
+            alt="avatar image" height="45"> Andres Quintero Polania </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-info" >
+            <div class="menis">
+              <a class="dropdown-info"><img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" class="rounded-circle z-depth-0"
+              alt="avatar image" height="100"></a>
+              <a class="dropdown-item">Andres Quintero Polania</a>
+              <a class="dropdown-info">Registro y control </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown"><button class="btn" type="button">Cerrar Sesision</button></a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </mat-toolbar>
+    <ng-content></ng-content>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

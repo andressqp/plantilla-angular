@@ -1,0 +1,18 @@
+.btn{
+    background: #DFD4A6;
+    color: #8F141B;
+    cursor: pointer;
+  }
+
+
+.content-img {
+    width:300px;
+    height:200px;
+    line-height:500px;
+    margin:0px auto;
+    text-align:center;
+}
+
+img {
+    vertical-align:middle;
+}
